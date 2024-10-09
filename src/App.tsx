@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ButtonAccordion from "./components/ButtonAccordion/ButtonAccordion";
+import { AccordionItem } from "./models/accordion-item.model";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const accordionItems: AccordionItem[] = [
+    {
+      header: {
+        buttonLabel: "Save",
+        buttonVariant: "primary",
+        text: "Save Your Items",
+      },
+      body: "This is the dynamic text of the super cool button accordion. Presumably this entails info on saving something somewhere",
+    },
+  ];
+  return <ButtonAccordion accordionItems={accordionItems} />;
 }
 
 export default App;
